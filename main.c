@@ -122,8 +122,6 @@ NodePtr search_value(BT t, int value)
 		sub_tree->root = get_right(t->root);
 	}
 	else {
-		BT sub_tree;
-		init_tree(&sub_tree);
 		sub_tree->root = get_left(t->root);
 	}
 	return search_value(sub_tree, value);
