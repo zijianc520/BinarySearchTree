@@ -193,7 +193,7 @@ void delete_value(BT t, int value)
 		}
 
 		/* if it has left & right child
-		 * find the smallest node from its right sub tree (a node without any child)
+		 * find the smallest node from its right sub tree (a node without left child)
 		 * replace deleted node by found node
 		 */
 		NodePtr tmp = t->root, parent = t->root, child = get_right(t->root), left_c = get_left(t->root), right_c = get_right(t->root);
@@ -340,14 +340,5 @@ void main()
 	printf("\n\n");
 
 
-
-	int v1 = 16, v2 = 9;
-	NodePtr find_pub = nearest_public_ancestor(tree, v1, v2);
-	if (find_pub) {
-		printf("\n");
-		printf("Nearest Public Ancestor of %d and %d is: %d \n", v1, v2, get_data(find_pub));
-		printf("\n\n");
-	}
-	
 	destory_tree(tree->root);
 }
